@@ -16,6 +16,34 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Active Navigation Link on Scroll
+const sections = document.querySelectorAll('section, header');
+const navLinks = document.querySelectorAll('.nav-link');
+
+function setActiveLink() {
+    let current = '';
+    const offset = 100; // Adjust based on navbar height
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        
+        if (window.scrollY >= (sectionTop - offset)) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+            link.classList.add('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', setActiveLink);
+window.addEventListener('load', setActiveLink);
+
 // Smooth Scrolling for Anchor Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
