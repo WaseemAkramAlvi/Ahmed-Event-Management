@@ -132,6 +132,8 @@ a {
     /* Offset navbar height */
 }
 
+
+
 .hero-bg-overlay {
     position: absolute;
     top: 0;
@@ -197,6 +199,8 @@ a {
 }
 
 .portfolio-item img {
+    height: 300px;
+    object-fit: cover;
     transition: transform 0.5s ease;
 }
 
@@ -270,4 +274,32 @@ a {
         margin-top: 10px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+    color: #fff;
 }
