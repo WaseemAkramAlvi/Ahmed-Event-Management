@@ -1,3 +1,14 @@
+@media screen and (max-width: 600px) {
+      
+    #view-service-button{
+        margin-top: 10px;
+    }
+    #view-book-now-button{
+        margin-left: 13px;
+    }
+
+    }
+
 /* Global Styles */
 :root {
     --primary-color: #d4af37;
